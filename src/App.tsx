@@ -54,10 +54,12 @@ const AuthForm: React.FC = () => {
 
       sx={{
         minHeight: '100vh',
-        backgroundColor: tab === 0 ? '#e0f7fa' : '#fce4ec',
+
+        backgroundColor: tab === 0 ? '#e0f7fa' : '#e0f7fa',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+
       }
     }
 
@@ -83,6 +85,7 @@ const AuthForm: React.FC = () => {
                   error={!!loginForm.formState.errors.email}
                   helperText={loginForm.formState.errors.email?.message}
                 />
+
                 <TextField
                   fullWidth
                   margin="normal"
@@ -92,7 +95,9 @@ const AuthForm: React.FC = () => {
                   error={!!loginForm.formState.errors.password}
                   helperText={loginForm.formState.errors.password?.message}
                 />
+
                 <Box textAlign="center" mt={3}>
+
                   <Button type="submit" variant="contained" color="primary">Login</Button>
                 </Box>
               </form>
@@ -103,6 +108,7 @@ const AuthForm: React.FC = () => {
             <>
               <Typography variant="h5" mt={2} align="center">Create Account</Typography>
               <form onSubmit={registerForm.handleSubmit(handleRegisterSubmit)} noValidate>
+               
                 <TextField
                   fullWidth
                   margin="normal"
