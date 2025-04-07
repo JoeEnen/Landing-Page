@@ -67,8 +67,8 @@ const AuthForm: React.FC = () => {
     >
       <Container maxWidth="sm">
         <Paper elevation={6} sx={{ p: 4 }}>
-          <Tabs value={tab} onChange={(e, val) => setTab(val)} centered>
-            <Tab label="Login" />
+        <Tabs value={tab} onChange={(_, val) => setTab(val)} centered>
+          <Tab label="Login" />
             <Tab label="Create Account" />
           </Tabs>
 
