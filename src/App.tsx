@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Button,
-  Container,
-  Paper,
-  Tab,
+
+import { Box, } from '@mui/material';
+
+import { Button,} from '@mui/material'
+import { Container,} from '@mui/material'
+import { Paper,} from '@mui/material'
+import { Tab,
   Tabs,
-  TextField,
-  Typography,
-} from '@mui/material';
+} from '@mui/material'
+import { TextField, } from '@mui/material'
+import { Typography, } from '@mui/material'
+
+
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-const registerSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
-});
+const registerSchema = z.object(
+  {
+  name: z.string().min(1, "Write name"),
+  email: z.string().email("Write corrett email"),
+  password: z.string().min(6, "write longer password"),
+}
+);
 
-const loginSchema = z.object({
-  email: z.string().email("Invalid email"),
-  password: z.string().min(1, "Password is required"),
-});
+const loginSchema = z.object(
+  {
+  email: z.string().email("write corrcet email"),
+  password: z.string().min(1, "must include password"),
+}
+)
+;
 
 type RegisterFormData = z.infer<typeof registerSchema>;
 type LoginFormData = z.infer<typeof loginSchema>;
@@ -38,17 +46,22 @@ const AuthForm: React.FC = () => {
 
   const handleRegisterSubmit = (data: RegisterFormData) => {
     console.log("Registering:", data);
-  };
+  }
+  ;
 
   return (
     <Box
+
       sx={{
         minHeight: '100vh',
         backgroundColor: tab === 0 ? '#e0f7fa' : '#fce4ec',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-      }}
+      }
+    }
+
+
     >
       <Container maxWidth="sm">
         <Paper elevation={6} sx={{ p: 4 }}>
@@ -84,6 +97,8 @@ const AuthForm: React.FC = () => {
                 </Box>
               </form>
             </>
+
+
           ) : (
             <>
               <Typography variant="h5" mt={2} align="center">Create Account</Typography>
@@ -96,6 +111,8 @@ const AuthForm: React.FC = () => {
                   error={!!registerForm.formState.errors.name}
                   helperText={registerForm.formState.errors.name?.message}
                 />
+
+
                 <TextField
                   fullWidth
                   margin="normal"
@@ -105,6 +122,8 @@ const AuthForm: React.FC = () => {
                   error={!!registerForm.formState.errors.email}
                   helperText={registerForm.formState.errors.email?.message}
                 />
+
+
                 <TextField
                   fullWidth
                   margin="normal"
@@ -114,16 +133,24 @@ const AuthForm: React.FC = () => {
                   error={!!registerForm.formState.errors.password}
                   helperText={registerForm.formState.errors.password?.message}
                 />
+
+
                 <Box textAlign="center" mt={3}>
                   <Button type="submit" variant="contained" color="secondary">Register</Button>
                 </Box>
               </form>
             </>
-          )}
+          )
+          }
+
         </Paper>
       </Container>
     </Box>
+
   );
 };
+
+
+
 
 export default AuthForm;
