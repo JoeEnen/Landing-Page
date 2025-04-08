@@ -108,7 +108,7 @@ const AuthForm: React.FC = () => {
             <>
               <Typography variant="h5" mt={2} align="center">Create Account</Typography>
               <form onSubmit={registerForm.handleSubmit(handleRegisterSubmit)} noValidate>
-               
+              
                 <TextField
                   fullWidth
                   margin="normal"
