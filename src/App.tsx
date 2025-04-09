@@ -69,7 +69,7 @@ const AuthForm: React.FC = () => {
         <Paper elevation={6} sx={{ p: 4 }}>
         <Tabs value={tab} onChange={(_, val) => setTab(val)} centered>
           <Tab label="Login" />
-            <Tab label="Create Account" />
+            <Tab label="Create New Account" />
           </Tabs>
 
           {tab === 0 ? (
